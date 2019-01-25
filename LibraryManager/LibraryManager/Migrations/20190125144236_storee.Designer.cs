@@ -3,14 +3,16 @@ using LibraryManager;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LibraryManager.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    partial class EFLibraryContextModelSnapshot : ModelSnapshot
+    [Migration("20190125144236_storee")]
+    partial class storee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,8 +48,6 @@ namespace LibraryManager.Migrations
                     b.Property<string>("Category")
                         .HasMaxLength(50);
 
-                    b.Property<int>("StoreId");
-
                     b.Property<string>("Title")
                         .HasMaxLength(255);
 
@@ -63,6 +63,8 @@ namespace LibraryManager.Migrations
                     b.Property<int>("StoreId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookId");
 
                     b.Property<string>("Location");
 

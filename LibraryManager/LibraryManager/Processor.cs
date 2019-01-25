@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using LibraryManager;
-
 namespace LibraryManager
 {
     partial class Processor
@@ -16,7 +13,7 @@ namespace LibraryManager
                     var idA = b.AuthorId;
                     var find = context.Authors.Find(idA);
                     
-                    Console.WriteLine($"Titolo: {b.Title}, Autore: {find.FirstName +" "+ find.LastName}, Categoria: {b.Category};");
+                    Console.WriteLine($"ID: {b.BookId} - Titolo: {b.Title}, Autore: {find.FirstName +" "+ find.LastName}, Categoria: {b.Category};");
                 }
             }
         }
@@ -25,13 +22,11 @@ namespace LibraryManager
         {
             using (var context = new LibraryContext())
             {
-                // Stampa elenco autori con id
                 foreach (var a in context.Authors)
                 {
                     Console.WriteLine($"ID: {a.AuthorID}, Nome: {a.FirstName}, Cognome: {a.LastName};");
                 }
-                Console.WriteLine("Inserisci l'ID: ");
-                int choice = Int32.Parse(ReadAnswer());
+                int choice = Int32.Parse(ReadAnswer("Inserisci l'ID: "));
                 foreach(var b in context.Books)
                 {
                    if(b.AuthorId == choice)
@@ -46,7 +41,22 @@ namespace LibraryManager
         {
             using (var context = new LibraryContext())
             {
-                throw new NotImplementedException();
+                // Controllare cosa succede se si inserisce un nome di autore esistente
+                var i = input.Split(' ');
+                var author = new Author
+                {
+                    FirstName = i[0],
+                    LastName = i[1],
+                    Books = new List<Book>
+                    {
+                        new Book {Title = ReadAnswer("Inserisci il titolo del libro: "),
+                                  Category = ReadAnswer("Inserisci la categoria del libro: "),
+                                  StoreId = Int32.Parse(ReadAnswer("Inserisci l'ID dello store: "))
+                        }
+                    } 
+                };
+                context.Add(author);
+                context.SaveChanges();
             }
         }
 
@@ -54,7 +64,10 @@ namespace LibraryManager
         {
             using (var context = new LibraryContext())
             {
-                throw new NotImplementedException();
+                ShowAllBooks();
+                int input = Int32.Parse(ReadAnswer("Inserisci l'ID: "));
+                context.Remove(context.Books.Find(input));
+                context.SaveChanges();
             }
         }
 
@@ -62,8 +75,21 @@ namespace LibraryManager
         {
             using (var context = new LibraryContext())
             {
-                throw new NotImplementedException();
+                foreach (var a in context.Authors)
+                {
+                    Console.WriteLine($"ID: {a.AuthorID}, Nome: {a.FirstName}, Cognome: {a.LastName};");
+                }
+                int input = Int32.Parse(ReadAnswer("Inserisci l'ID: "));
+                context.Remove(context.Authors.Find(input));
+                context.SaveChanges();
             }
+        }
+
+        internal void AddInStore()
+        {
+            // Stampa lista magazzini
+            // Scegli l'ID del magazzino
+            // Assegna al libro
         }
 
         private string ReadAnswer(string prompt = "")

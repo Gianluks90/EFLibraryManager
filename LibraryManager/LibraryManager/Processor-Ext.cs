@@ -40,5 +40,10 @@ namespace LibraryManager
         {
 
         }
+
+        internal void BookInStore()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
