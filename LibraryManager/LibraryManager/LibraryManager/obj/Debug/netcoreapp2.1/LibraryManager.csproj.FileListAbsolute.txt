@@ -1,0 +1,11 @@
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\bin\Debug\netcoreapp2.1\LibraryManager.deps.json
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\bin\Debug\netcoreapp2.1\LibraryManager.runtimeconfig.json
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\bin\Debug\netcoreapp2.1\LibraryManager.runtimeconfig.dev.json
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\bin\Debug\netcoreapp2.1\LibraryManager.dll
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\obj\Debug\netcoreapp2.1\LibraryManager.csprojAssemblyReference.cache
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\obj\Debug\netcoreapp2.1\LibraryManager.csproj.CoreCompileInputs.cache
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\obj\Debug\netcoreapp2.1\LibraryManager.AssemblyInfoInputs.cache
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\obj\Debug\netcoreapp2.1\LibraryManager.AssemblyInfo.cs
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\bin\Debug\netcoreapp2.1\LibraryManager.pdb
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\obj\Debug\netcoreapp2.1\LibraryManager.dll
+C:\Users\Allievo 11\Source\Repos\LibraryManager\LibraryManager\obj\Debug\netcoreapp2.1\LibraryManager.pdb
